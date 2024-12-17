@@ -83,12 +83,6 @@ public class Ex9 {
     btnNewButton_1.addActionListener(new ActionListener() {
     	public void actionPerformed(ActionEvent e) {
     		GrayImage gimg = new GrayImage(imgPanel.getImage());
-    		for(int i=0; i<gimg.getWidth(); i++) {
-    			for(int j=0; j<gimg.getHeight(); j++) {
-    				int gray = gimg.getGray(i, j);
-    				gimg.setGray(i, j, gray);
-    			}
-    		}
     		imgPanel.setImage(gimg);
     	}
     });

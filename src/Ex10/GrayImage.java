@@ -12,14 +12,8 @@ public class GrayImage extends BufferedImage{
 	}
 	int getGray(int x, int y) {
 		int argb =  getRGB(x, y);
-		int a = (argb >> 24) & 0xff; //アルファ値の取り出し
-		int r = (argb >> 16) & 0xff; //r値の取り出し
-		int g = (argb >> 8) & 0xff; //g値の取り出し
 		int b = argb & 0xff; //b値の取り出し
-		
-		int l = (r+g+b)/3; //rgbの平均値
-		
-		return l;
+		return b;//r,g,bの値はすべて同じなのでb値だけ返す
 	}
 	void setGray(int x, int y, int gray) {
 		int argb = (0xff << 24) | (gray << 16) | (gray << 8) | gray;
